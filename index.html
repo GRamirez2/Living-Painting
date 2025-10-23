@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Art - 11 Vertical Color Bands</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .band {
+            flex: 1;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Original colors - warmVibrant array (redistributed for distinct adjacent colors) */
+        .band-1 { background: #E63946; } /* Red */
+        .band-2 { background: #A8DADC; } /* Light Blue */
+        .band-3 { background: #F4A261; } /* Orange */
+        .band-4 { background: #264653; } /* Dark Green */
+        .band-5 { background: #E9C46A; } /* Yellow */
+        .band-6 { background: #B23A48; } /* Dark Red */
+        .band-7 { background: #F8CBA6; } /* Peach */
+        .band-8 { background: #2C2C2C; } /* Dark Gray */
+        .band-9 { background: #F6AE2D; } /* Golden */
+        .band-10 { background: #7E2E47; } /* Burgundy */
+        .band-11 { background: #D97757; } /* Coral */
+        .band-12 { background: #6B4C3B; } /* Brown */
+        .band-13 { background: #F2B6A0; } /* Light Pink */
+        .band-14 { background: #FF8C69; } /* Salmon */
+        .band-15 { background: #B17457; } /* Tan */
+        .band-16 { background: #FBB13C; } /* Bright Orange */
+        .band-17 { background: #D98C8C; } /* Rose */
+        .band-18 { background: #FFE5A5; } /* Light Yellow */
+        .band-19 { background: #2C2C2C; } /* Dark Gray */
+        .band-20 { background: #FFF3E0; } /* Cream */
+
+
+        /* Animation keyframes - single band transition */
+        @keyframes colorTransition {
+            0% {
+                transform: translateY(-100%);
+            }
+            8.33% {
+                transform: translateY(0%);
+            }
+            16.66% {
+                transform: translateY(0%);
+            }
+            25% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+
+        .color-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform: translateY(-100%);
+            animation: colorTransition 120s ease-in-out infinite;
+        }
+
+        /* Sequential animation delays - each band changes 6 seconds after the previous */
+        .band-1 .color-overlay { animation-delay: 0s; }
+        .band-2 .color-overlay { animation-delay: 6s; }
+        .band-3 .color-overlay { animation-delay: 12s; }
+        .band-4 .color-overlay { animation-delay: 18s; }
+        .band-5 .color-overlay { animation-delay: 24s; }
+        .band-6 .color-overlay { animation-delay: 30s; }
+        .band-7 .color-overlay { animation-delay: 36s; }
+        .band-8 .color-overlay { animation-delay: 42s; }
+        .band-9 .color-overlay { animation-delay: 48s; }
+        .band-10 .color-overlay { animation-delay: 54s; }
+        .band-11 .color-overlay { animation-delay: 60s; }
+        .band-12 .color-overlay { animation-delay: 66s; }
+        .band-13 .color-overlay { animation-delay: 72s; }
+        .band-14 .color-overlay { animation-delay: 78s; }
+        .band-15 .color-overlay { animation-delay: 84s; }
+        .band-16 .color-overlay { animation-delay: 90s; }
+        .band-17 .color-overlay { animation-delay: 96s; }
+        .band-18 .color-overlay { animation-delay: 102s; }
+        .band-19 .color-overlay { animation-delay: 108s; }
+        .band-20 .color-overlay { animation-delay: 114s; }
+
+        /* Second round - mutedNeutrals colors */
+        .band-1 .color-overlay-2 { animation-delay: 0s; }
+        .band-2 .color-overlay-2 { animation-delay: 6s; }
+        .band-3 .color-overlay-2 { animation-delay: 12s; }
+        .band-4 .color-overlay-2 { animation-delay: 18s; }
+        .band-5 .color-overlay-2 { animation-delay: 24s; }
+        .band-6 .color-overlay-2 { animation-delay: 30s; }
+        .band-7 .color-overlay-2 { animation-delay: 36s; }
+        .band-8 .color-overlay-2 { animation-delay: 42s; }
+        .band-9 .color-overlay-2 { animation-delay: 48s; }
+        .band-10 .color-overlay-2 { animation-delay: 54s; }
+        .band-11 .color-overlay-2 { animation-delay: 60s; }
+        .band-12 .color-overlay-2 { animation-delay: 66s; }
+        .band-13 .color-overlay-2 { animation-delay: 72s; }
+        .band-14 .color-overlay-2 { animation-delay: 78s; }
+        .band-15 .color-overlay-2 { animation-delay: 84s; }
+        .band-16 .color-overlay-2 { animation-delay: 90s; }
+        .band-17 .color-overlay-2 { animation-delay: 96s; }
+        .band-18 .color-overlay-2 { animation-delay: 102s; }
+        .band-19 .color-overlay-2 { animation-delay: 108s; }
+        .band-20 .color-overlay-2 { animation-delay: 114s; }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            
+            .band {
+                height: calc(100vh / 20);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="band band-1">
+        <div class="color-overlay" style="background: #E0FBFC;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #EDE7E3;"></div>
+    </div>
+    <div class="band band-2">
+        <div class="color-overlay" style="background: #98C1D9;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #CFC1B2;"></div>
+    </div>
+    <div class="band band-3">
+        <div class="color-overlay" style="background: #3D5A80;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #A8A39D;"></div>
+    </div>
+    <div class="band band-4">
+        <div class="color-overlay" style="background: #1D3557;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #4A4A4A;"></div>
+    </div>
+    <div class="band band-5">
+        <div class="color-overlay" style="background: #E5E5E5;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #F5F5F5;"></div>
+    </div>
+    <div class="band band-6">
+        <div class="color-overlay" style="background: #5C6B73;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #BFA6A0;"></div>
+    </div>
+    <div class="band band-7">
+        <div class="color-overlay" style="background: #F7F9FA;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #CDBBA7;"></div>
+    </div>
+    <div class="band band-8">
+        <div class="color-overlay" style="background: #00B8D9;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #7E6651;"></div>
+    </div>
+    <div class="band band-9">
+        <div class="color-overlay" style="background: #4FD1C5;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #ADA79B;"></div>
+    </div>
+    <div class="band band-10">
+        <div class="color-overlay" style="background: #81E6D9;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #8D7B68;"></div>
+    </div>
+    <div class="band band-11">
+        <div class="color-overlay" style="background: #319795;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #EBD8C3;"></div>
+    </div>
+    <div class="band band-12">
+        <div class="color-overlay" style="background: #B2F5EA;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #D1C7BD;"></div>
+    </div>
+    <div class="band band-13">
+        <div class="color-overlay" style="background: #718096;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #A9A9A9;"></div>
+    </div>
+    <div class="band band-14">
+        <div class="color-overlay" style="background: #F9FAFB;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #D9CAB3;"></div>
+    </div>
+    <div class="band band-15">
+        <div class="color-overlay" style="background: #2D3748;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #C3A995;"></div>
+    </div>
+    <div class="band band-16">
+        <div class="color-overlay" style="background: #3182CE;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #E4D4C8;"></div>
+    </div>
+    <div class="band band-17">
+        <div class="color-overlay" style="background: #4C51BF;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #705C53;"></div>
+    </div>
+    <div class="band band-18">
+        <div class="color-overlay" style="background: #A3BFFA;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #D9D9D9;"></div>
+    </div>
+    <div class="band band-19">
+        <div class="color-overlay" style="background: #D6EAF8;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #5C4033;"></div>
+    </div>
+    <div class="band band-20">
+        <div class="color-overlay" style="background: #1A202C;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #F8F1E7;"></div>
+    </div>
+</body>
+</html>
