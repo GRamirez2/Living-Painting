@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Art - 11 Vertical Color Bands</title>
+    <title>Living Painting</title>
     <style>
         * {
             margin: 0;
@@ -15,17 +15,19 @@
             height: 100vh;
             display: flex;
             overflow: hidden;
+            flex-direction: column;
         }
 
         .band {
             flex: 1;
-            height: 100vh;
+            height: calc(100vh / 20);
             position: relative;
             overflow: hidden;
         }
 
+
         /* Original colors - warmVibrant array (redistributed for distinct adjacent colors) */
-        .band-1 { background: #E63946; } /* Red */
+        .band-1 { background: #a32d36; } /* Red */
         .band-2 { background: #A8DADC; } /* Light Blue */
         .band-3 { background: #F4A261; } /* Orange */
         .band-4 { background: #264653; } /* Dark Green */
@@ -44,7 +46,7 @@
         .band-17 { background: #D98C8C; } /* Rose */
         .band-18 { background: #FFE5A5; } /* Light Yellow */
         .band-19 { background: #2C2C2C; } /* Dark Gray */
-        .band-20 { background: #FFF3E0; } /* Cream */
+        .band-20 { background: #f3e1c5; } /* Cream */
 
 
         /* Animation keyframes - single band transition */
@@ -120,21 +122,12 @@
         .band-19 .color-overlay-2 { animation-delay: 108s; }
         .band-20 .color-overlay-2 { animation-delay: 114s; }
 
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-            }
-            
-            .band {
-                height: calc(100vh / 20);
-            }
-        }
     </style>
 </head>
 <body>
     <div class="band band-1">
-        <div class="color-overlay" style="background: #E0FBFC;"></div>
-        <div class="color-overlay color-overlay-2" style="background: #EDE7E3;"></div>
+        <div class="color-overlay" style="background: #86a7a8;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #e2cfb3;"></div>
     </div>
     <div class="band band-2">
         <div class="color-overlay" style="background: #98C1D9;"></div>
@@ -150,7 +143,7 @@
     </div>
     <div class="band band-5">
         <div class="color-overlay" style="background: #E5E5E5;"></div>
-        <div class="color-overlay color-overlay-2" style="background: #F5F5F5;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #f3e1c5;"></div>
     </div>
     <div class="band band-6">
         <div class="color-overlay" style="background: #5C6B73;"></div>
@@ -210,7 +203,7 @@
     </div>
     <div class="band band-20">
         <div class="color-overlay" style="background: #1A202C;"></div>
-        <div class="color-overlay color-overlay-2" style="background: #F8F1E7;"></div>
+        <div class="color-overlay color-overlay-2" style="background: #e2cfb3;"></div>
     </div>
 </body>
 </html>
